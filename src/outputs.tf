@@ -1,4 +1,9 @@
-output "mock" {
-  description = "Mock output example for the Cloud Posse Terraform component template"
-  value       = local.enabled ? "hello ${basename(abspath(path.module))}" : ""
+output "instance_id" {
+  value       = module.ec2_instance[*].id
+  description = "Instance ID"
+}
+
+output "private_ip" {
+  value       = module.ec2_instance[*].private_ip
+  description = "Private IP of the instance"
 }
