@@ -5,7 +5,7 @@ tags:
   - provider/aws
 ---
 
-# Component: `ec2`
+# Component: `ec2-instance`
 
 This component is responsible for provisioning a single EC2 instance.
 
