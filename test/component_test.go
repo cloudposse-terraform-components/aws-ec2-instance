@@ -30,7 +30,7 @@ func (s *ComponentSuite) TestBasic() {
 	privateIp := atmos.OutputList(s.T(), options, "private_ip")
 	assert.EqualValues(s.T(), 1, len(privateIp))
 
-	instanceIds := aws.GetEc2InstanceIdsByTag(s.T(), awsRegion, "Stage", "test")
+	instanceIds := aws.GetEc2InstanceIdsByTag(s.T(), awsRegion, "size", "xs")
 	instance := awshelper.GetEc2Instances(s.T(), context.Background(), instanceIds[0], awsRegion)
 	assert.EqualValues(s.T(), "t3a.micro", instance.InstanceType)
 

@@ -10,3 +10,5 @@ components:
         user_data: |
           #!/bin/bash
           echo "This is a test instance"
+        tags:
+          size: "xs"
