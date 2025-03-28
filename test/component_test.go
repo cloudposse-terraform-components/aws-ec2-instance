@@ -7,7 +7,6 @@ import (
 	"github.com/cloudposse/test-helpers/pkg/atmos"
 	helper "github.com/cloudposse/test-helpers/pkg/atmos/component-helper"
 	awshelper "github.com/cloudposse/test-helpers/pkg/aws"
-	"github.com/gruntwork-io/terratest/modules/aws"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -24,15 +23,15 @@ func (s *ComponentSuite) TestBasic() {
 	options, _ := s.DeployAtmosComponent(s.T(), component, stack, nil)
 	assert.NotNil(s.T(), options)
 
-	instanceId := atmos.Output(s.T(), options, "instance_id")
-	assert.NotEmpty(s.T(), instanceId)
+	instanceIds := atmos.OutputList(s.T(), options, "instance_id")
+	assert.NotEmpty(s.T(), instanceIds)
 
 	privateIp := atmos.OutputList(s.T(), options, "private_ip")
 	assert.EqualValues(s.T(), 1, len(privateIp))
 
-	instanceIds := aws.GetEc2InstanceIdsByTag(s.T(), awsRegion, "size", "xs")
 	instance := awshelper.GetEc2Instances(s.T(), context.Background(), instanceIds[0], awsRegion)
 	assert.EqualValues(s.T(), "t3a.micro", instance.InstanceType)
+	assert.EqualValues(s.T(), "running", instance.State.Name)
 
 	s.DriftTest(component, stack, nil)
 }
