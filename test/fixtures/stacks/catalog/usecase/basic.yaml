@@ -1,0 +1,14 @@
+components:
+  terraform:
+    ec2-instance/basic:
+      metadata:
+        component: target
+      vars:
+        enabled: true
+        name: test-instance
+        instance_type: "t3a.micro"
+        user_data: |
+          #!/bin/bash
+          echo "This is a test instance"
+        tags:
+          size: "xs"
