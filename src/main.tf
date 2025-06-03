@@ -34,7 +34,7 @@ data "template_file" "userdata" {
 
 module "ec2_instance" {
   source  = "cloudposse/ec2-instance/aws"
-  version = "1.4.0"
+  version = "2.0.0"
 
   enabled = local.enabled
 
