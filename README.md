@@ -65,7 +65,7 @@ components:
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ec2_instance"></a> [ec2\_instance](#module\_ec2\_instance) | cloudposse/ec2-instance/aws | 1.4.0 |
+| <a name="module_ec2_instance"></a> [ec2\_instance](#module\_ec2\_instance) | cloudposse/ec2-instance/aws | 2.0.0 |
 | <a name="module_iam_roles"></a> [iam\_roles](#module\_iam\_roles) | ../account-map/modules/iam-roles | n/a |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | cloudposse/stack-config/yaml//modules/remote-state | 1.8.0 |
