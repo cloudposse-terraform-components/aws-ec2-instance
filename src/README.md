@@ -34,14 +34,12 @@ components:
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0, < 6.0.0 |
-| <a name="requirement_template"></a> [template](#requirement\_template) | >= 2.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.0, < 6.0.0 |
-| <a name="provider_template"></a> [template](#provider\_template) | >= 2.2 |
 
 ## Modules
 
@@ -50,14 +48,13 @@ components:
 | <a name="module_ec2_instance"></a> [ec2\_instance](#module\_ec2\_instance) | cloudposse/ec2-instance/aws | 2.0.0 |
 | <a name="module_iam_roles"></a> [iam\_roles](#module\_iam\_roles) | ../account-map/modules/iam-roles | n/a |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
-| <a name="module_vpc"></a> [vpc](#module\_vpc) | cloudposse/stack-config/yaml//modules/remote-state | 1.8.0 |
+| <a name="module_vpc"></a> [vpc](#module\_vpc) | cloudposse/stack-config/yaml//modules/remote-state | 2.0.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [aws_ami.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) | data source |
-| [template_file.userdata](https://registry.terraform.io/providers/cloudposse/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
