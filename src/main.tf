@@ -6,9 +6,9 @@ locals {
   vpc_private_subnet_ids = sort(module.vpc.outputs.private_subnet_ids)
   subnet_id              = local.vpc_private_subnet_ids[0]
 
-  userdata = templatefile("${path.module}/templates/userdata.sh.tmpl", {
+  userdata = local.enabled ? templatefile("${path.module}/templates/userdata.sh.tmpl", {
     user_data = var.user_data
-  })
+  }) : ""
 }
 
 data "aws_ami" "this" {
